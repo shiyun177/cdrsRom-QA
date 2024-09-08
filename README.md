@@ -103,7 +103,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 2. 解压出来下载的Recovery.img，查看是否支持boot临时启动，以skkk的TWRP为例
 
-   ![TWRP_name_label](C:\Users\shiyu\Desktop\CdrsRoms\image\TWRP_name_label.png)
+   ![TWRP_name_label](image\TWRP_name_label.png)
 
    **带有REC标签为只能刷入Recovery分区使用，带有BOOT标签则支持临时启动，同时存在则表示两种方法均可**
 
@@ -111,13 +111,13 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
    若显示"< waiting for any device >"或什么都没显示请检查手机是否进入fastboot 模式，尝试安装驱动（群内下载），更换或使用数据线另一面，更换USB 2.0接口
 
-   ![fastboot-devices](C:\Users\shiyu\Desktop\CdrsRoms\image\fastboot-devices.png)多个设备连接
+   ![fastboot-devices](image\fastboot-devices.png)多个设备连接
 
    若显示多个设备请断开其他多余的连接，只保留需要刷入的那一个设备
 
-   ![fastboot-devices_only](C:\Users\shiyu\Desktop\CdrsRoms\image\fastboot-devices_only.png)只有一个设备
+   ![fastboot-devices_only](fastboot-devices_only.png)只有一个设备
 
-4. 若使用临时启动方式，请输入"fastboot boot 路径名\\rec.img"（可将img文件直接拖拽到窗口中）![fastboot-boot_path](C:\Users\shiyu\Desktop\CdrsRoms\image\fastboot-boot_path.png)
+4. 若使用临时启动方式，请输入"fastboot boot 路径名\\rec.img"（可将img文件直接拖拽到窗口中）![fastboot-boot_path](image\fastboot-boot_path.png)
 
    回车出现"Finished"字样即为成功，手机会自动打开TWRP，点击"**高级-刷入当前TWRP**"即为刷入完成
 
@@ -140,7 +140,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 **点此跳转对应刷入方式：**[线刷](#usb_flash)		[卡刷](twrp_flash)		[半卡刷](#2in1_flash)
 
-<img src="D:\CdrsRoms\image\system-package_name.jpg" alt="system-package_name" style="zoom: 80%;" />
+<img src="image\system-package_name.jpg" alt="system-package_name" style="zoom: 80%;" />
 
 **文件名为：Ext4_cmi_Mi10Pro_Cdrs_HyperOS1.0.15.0.UMACNXM(13U移植)_A14_da608.zip**
 
@@ -182,7 +182,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 **只要出现“安装耗时******秒****”，上方显示<u>成功</u>即为刷入成功**
 安装完成一般如下图所示
 
-<img src="C:\Users\shiyu\Desktop\CdrsRoms\image\TWRP_flash.png" alt="TWRP_flash" style="zoom: 33%;" />
+<img src="image\TWRP_flash.png" alt="TWRP_flash" style="zoom: 33%;" />
 
 
 ## <span id="2in1_flash">半卡刷</span>
@@ -229,7 +229,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 **在刷机或进行重要且有风险的操作之前，我们建议先校验文件确保其完整性**
 
-![](C:\Users\shiyu\Desktop\CdrsRoms\image\TWRP-package_name.jpg)
+![](image\TWRP-package_name.jpg)
 
 以文件名为 <u>[REC_BOOT]3.7.1_12-Mi10Pro_FBEv2_v8.6_A14-cmi-skkk_9d23a457.zip</u> 的文件为例
 
@@ -243,7 +243,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 打开cmd，输入"**certutil -hashfile <文件名称(绝对路径)> MD5**"，回车即可校验
 
-![windows_check-md5](C:\Users\shiyu\Desktop\CdrsRoms\image\windows_check-md5.png)
+![windows_check-md5](image\windows_check-md5.png)
 
 红色框选处为命令，绿色即为得到的结果，将结果与文件对比，**数值完全一致即为完整，数值不一样则需要重新下载**
 
@@ -251,7 +251,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 ### <span id="android_Check">Android</span>
 
-以MT管理器为例，**长按文件，依次点击属性-校验，比对md5是否与文件一致，不一致请重新下载后再次比对**<img src="C:\Users\shiyu\Desktop\CdrsRoms\image\android_check-md5.jpg" alt="android_check-md5" style="zoom:33%;" />
+以MT管理器为例，**长按文件，依次点击属性-校验，比对md5是否与文件一致，不一致请重新下载后再次比对**<img src="image\android_check-md5.jpg" alt="android_check-md5" style="zoom:33%;" />
 
 
 
@@ -271,15 +271,15 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 2. 将下载好的压缩包解压出来，存放位置和命名随意，但请注意**不能删除或修改这个路径里的任意文件夹或文件**例如我存放在了"C:\D\develop\ADB\\"
 
-   ![Platform-Tools_folder](C:\Users\shiyu\Desktop\CdrsRoms\image\Platform-Tools_folder.png)这个目录**此后这个路径和文件夹不能进行任何更改，否则按照接下来的步骤重新配置**
+   ![Platform-Tools_folder](image\Platform-Tools_folder.png)这个目录**此后这个路径和文件夹不能进行任何更改，否则按照接下来的步骤重新配置**
 
 3. 打开这个文件夹并在顶部把路径**复制**下来
 
-   ![adb-path_copy](C:\Users\shiyu\Desktop\CdrsRoms\image\adb-path_copy.png)
+   ![adb-path_copy](image\adb-path_copy.png)
 
 4. 按下Win键，在搜索栏输入"环境变量"打开或者依次打开"设置-系统信息-高级系统设置"，再点击环境变量，在**系统变量**中找到Path并双击打开
 
-   ![environment-variable_path](C:\Users\shiyu\Desktop\CdrsRoms\image\environment-variable_path.png)
+   ![environment-variable_path](image\environment-variable_path.png)
 
 5. 点击"新建按钮"或点击下方空白栏，**将复制的路径粘贴进去，并一路点击确定**
 
