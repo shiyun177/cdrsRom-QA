@@ -103,7 +103,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 2. 解压出来下载的Recovery.img，查看是否支持boot临时启动，以skkk的TWRP为例
 
-   ![TWRP_name_label](image\TWRP_name_label.png)
+   ![TWRP_name_label](\image\TWRP_name_label.png)
 
    **带有REC标签为只能刷入Recovery分区使用，带有BOOT标签则支持临时启动，同时存在则表示两种方法均可**
 
@@ -111,13 +111,13 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
    若显示"< waiting for any device >"或什么都没显示请检查手机是否进入fastboot 模式，尝试安装驱动（群内下载），更换或使用数据线另一面，更换USB 2.0接口
 
-   ![fastboot-devices](image\fastboot-devices.png)多个设备连接
+   ![fastboot-devices](\image\fastboot-devices.png)多个设备连接
 
    若显示多个设备请断开其他多余的连接，只保留需要刷入的那一个设备
 
-   ![fastboot-devices_only](fastboot-devices_only.png)只有一个设备
+   ![fastboot-devices_only](\imagefastboot-devices_only.png)只有一个设备
 
-4. 若使用临时启动方式，请输入"fastboot boot 路径名\\rec.img"（可将img文件直接拖拽到窗口中）![fastboot-boot_path](image\fastboot-boot_path.png)
+4. 若使用临时启动方式，请输入"fastboot boot 路径名\\rec.img"（可将img文件直接拖拽到窗口中）![fastboot-boot_path](\image\fastboot-boot_path.png)
 
    回车出现"Finished"字样即为成功，手机会自动打开TWRP，点击"**高级-刷入当前TWRP**"即为刷入完成
 
