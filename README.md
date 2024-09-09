@@ -182,7 +182,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 **只要出现“安装耗时******秒****”，上方显示<u>成功</u>即为刷入成功**
 安装完成一般如下图所示
 
-<img src="image\TWRP_flash.png" alt="TWRP_flash" width="30%" />
+<img src="image\TWRP_flash.png" alt="TWRP_flash" width="50%" />
 
 
 ## <span id="2in1_flash">半卡刷(ADB Sideload)</span>
