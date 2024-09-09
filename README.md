@@ -87,7 +87,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 # 刷机教程
 
-## （可选）刷入第三方Recovery（REC）
+## <span id="flash_rec">（可选）刷入第三方Recovery（REC）</span>
 
 > ## 绝大部分人选择TWRP作为第三方REC使用，故此教程使用TWRP作为演示，其他REC也可按着此教程操作
 
@@ -97,13 +97,13 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 ### 方法二：下载好第三方Recovery用搞机助手等工具刷入
 
-### 方法三：传统命令刷入，接下来的步骤需要使用到fastboot命令，若没配置adb请[点击这里]()查看教程
+### 方法三：传统命令刷入，接下来的步骤需要使用到fastboot命令，若没配置adb请[点击这里](#adb_install)查看教程
 
 1. 下载第三方Recovery，可以是群里的，也可以是其他地方的，推荐skkk的TWRP，或者去酷安@mi_block的帖子里下载对应机型的REC（[点此跳转](https://www.coolapk.com/feed/45189101?shareKey=ZGEzYzNkOTViNjU5NjZjOWU0NjU~&shareUid=4400238&shareFrom=com.coolapk.market_13.4.1)）
 
 2. 解压出来下载的Recovery.img，查看是否支持boot临时启动，以skkk的TWRP为例
 
-   ![TWRP_name_label](\image\TWRP_name_label.png)
+   <img src="image\TWRP_name_label.png" alt="TWRP_name_label" />
 
    **带有REC标签为只能刷入Recovery分区使用，带有BOOT标签则支持临时启动，同时存在则表示两种方法均可**
 
@@ -111,13 +111,13 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
    若显示"< waiting for any device >"或什么都没显示请检查手机是否进入fastboot 模式，尝试安装驱动（群内下载），更换或使用数据线另一面，更换USB 2.0接口
 
-   ![fastboot-devices](\image\fastboot-devices.png)多个设备连接
+   <img src="image\fastboot-devices.png" alt="fastboot-devices" />
 
    若显示多个设备请断开其他多余的连接，只保留需要刷入的那一个设备
 
-   ![fastboot-devices_only](\imagefastboot-devices_only.png)只有一个设备
+   <img src="image\fastboot-devices_only.png" alt="fastboot-devices_only" />只有一个设备
 
-4. 若使用临时启动方式，请输入"fastboot boot 路径名\\rec.img"（可将img文件直接拖拽到窗口中）![fastboot-boot_path](\image\fastboot-boot_path.png)
+4. 若使用临时启动方式，请输入"fastboot boot 路径名\\rec.img"（可将img文件直接拖拽到窗口中）<img src="image\fastboot-boot_path.png" alt="fastboot-boot_path" />
 
    回车出现"Finished"字样即为成功，手机会自动打开TWRP，点击"**高级-刷入当前TWRP**"即为刷入完成
 
@@ -136,7 +136,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 **需要准备：系统包，电脑/手机TWRP。**
 
-**此教程将说明：线刷/卡刷/半卡刷**
+**此教程将说明：线刷/卡刷/半卡刷(ADB Sideload)**
 
 **点此跳转对应刷入方式：**[线刷](#usb_flash)		[卡刷](twrp_flash)		[半卡刷](#2in1_flash)
 
@@ -158,7 +158,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 3. 手机启动到fastboot模式并连接电脑，点击Cdrs一键线刷工具Flash.bat，并根据提示输入数字，最后等待重启即可
 
-   ![image-20240907230248866](C:\Users\shiyu\AppData\Roaming\Typora\typora-user-images\image-20240907230248866.png)
+   <img src="image/fastboot-Flash.png" alt="fastboot-Flash" />
 
 ## <span id="twrp_flash">卡刷</span>
 
@@ -185,11 +185,17 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 <img src="image\TWRP_flash.png" alt="TWRP_flash" style="zoom: 33%;" />
 
 
-## <span id="2in1_flash">半卡刷</span>
+## <span id="2in1_flash">半卡刷(ADB Sideload)</span>
 
-**首先请先检查您的系统包确认是否完整（[如何检查请点这里](#check_File)**）
+**首先请先检查您的系统包确认是否完整（[如何检查请点这里](#check_File)），并且确定已经配置ADB环境([点此查看如何配置](#adb_install))**
 
+1. 手机进入rec界面，点击高级，ADB Sideload，滑动滑块
 
+   <img src="C:\Users\shiyu\Desktop\CdrsRoms\image\ADB-Sideload.png" alt="ADB-Sideload" style="zoom:33%;" />
+
+2. 连接电脑，在黑窗口输入"adb sideload 文件完整路径"(**不要解压，直接用zip压缩包**)
+
+3. 回车，剩下的在手机上操作即可
 
 
 
@@ -197,19 +203,40 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 ## 使用Root的三种方式
 
+### 出厂A13开始就要修补init_boot.img，A12及以下的修补boot.img
+
 ### Magisk（面具）
+
+包自带Delta面具(即Kitsune Mask)，想要升降级就修补环境刷入即可
+
+线刷指令：fastboot flash 对应分区 img镜像（[刷入方式详见刷入第三方rec](#flash_rec)）、
+
+
+
+想刷其他面具版本可以参考：https://magiskcn.com/magisk-change
+
+也可以下载并安装需要的面具，在原面具中把自动响应改为允许并给新面积root权限，最后到新面具修补即可
+
+相关链接：[Magisk原版仓库](https://github.com/topjohnwu/Magisk)		[Kitsune Mask (Delta仓库)](https://github.com/HuskyDG/magisk-files)		[Magisk Alpha仓库](https://install.appcenter.ms/users/vvb2060/apps/magisk/distribution_groups/public)
 
 ### KernelSU（KSU）
 
+**若使用KSU则原来所有Magisk模块都会被清楚，请自行考虑**
+
+1. 准备支持KSU的内核，并下载安装KSU管理器（[点此跳转](https://github.com/tiann/KernelSU/releases)）
+2. 刷入内核即可使用（若设备里有Magisk可以点击卸载Magisk-完全卸载即可）
+
+相关链接&其他安装方法：https://kernelsu.org/zh_CN/guide/what-is-kernelsu.html
+
 ### Apatch
+
+
 
 ## 如何隐藏Root
 
-## Root的实现方式如何转换
-
 ## 关于模块想说的话
 
-
+非必要不要刷一些玄学的优化模块，少刷模块别养蛊，**谨防格机模块，谨防格机模块，谨防格机模块，**救砖模块都救不了
 
 # 备份相关
 
@@ -217,9 +244,18 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 # 如何替换基带
 
+**注意！请备份原基带！无论是多系统工具箱备份字库还是复制大法，请务必备份，推荐备份字库！请确保基带可在本机使用！** 
 
+1. mt管理器进入/vendor/firmware_mnt/image/（没有备份请先备份！） 
 
-# 其他
+2. 打开飞行模式，将下载好的基带文件替换进去 
+
+3. 关闭飞行等一段时间（30秒），有信号了重启两次（其实一次就行，不知道为什么都说两次） 
+  受当地网络环境和运营商的影响，请自行寻找合适的基带，请确保基带可在本机使用，请务必备份数据！
+
+  推荐多系统工具箱备份整个字库！ 
+
+# 常见问题
 
 ## 声音不大，音质一般
 
@@ -229,7 +265,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 **在刷机或进行重要且有风险的操作之前，我们建议先校验文件确保其完整性**
 
-![](image\TWRP-package_name.jpg)
+<img src="image\TWRP-package_name.jpg" alt="TWRP-package_name" />
 
 以文件名为 <u>[REC_BOOT]3.7.1_12-Mi10Pro_FBEv2_v8.6_A14-cmi-skkk_9d23a457.zip</u> 的文件为例
 
@@ -243,7 +279,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 打开cmd，输入"**certutil -hashfile <文件名称(绝对路径)> MD5**"，回车即可校验
 
-![windows_check-md5](image\windows_check-md5.png)
+<img src="image\windows_check-md5.png" alt="windows_check-md5" />
 
 红色框选处为命令，绿色即为得到的结果，将结果与文件对比，**数值完全一致即为完整，数值不一样则需要重新下载**
 
@@ -251,7 +287,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 ### <span id="android_Check">Android</span>
 
-以MT管理器为例，**长按文件，依次点击属性-校验，比对md5是否与文件一致，不一致请重新下载后再次比对**<img src="image\android_check-md5.jpg" alt="android_check-md5" style="zoom:33%;" />
+以MT管理器为例，**长按文件，依次点击属性-校验，比对md5是否与文件一致，不一致请重新下载后再次比对**<img src="C:\Users\shiyu\Desktop\CdrsRoms\image\android_check-md5.jpg" alt="android_check-md5" style="zoom:33%;" />
 
 
 
@@ -265,24 +301,24 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 请将手机进入fastboot模式并连接电脑
 
-## 如何安装ADB
+## <span id="adb_install">如何安装ADB</span>
 
 1. [点此跳转到下载界面并下载对应系统的 Platform-Tools 工具包](https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn#downloads)
 
 2. 将下载好的压缩包解压出来，存放位置和命名随意，但请注意**不能删除或修改这个路径里的任意文件夹或文件**例如我存放在了"C:\D\develop\ADB\\"
 
-   ![Platform-Tools_folder](image\Platform-Tools_folder.png)这个目录**此后这个路径和文件夹不能进行任何更改，否则按照接下来的步骤重新配置**
+   <img src="image\Platform-Tools_folder.png" alt="Platform-Tools_folder" />这个目录**此后这个路径和文件夹不能进行任何更改，否则按照接下来的步骤重新配置**
 
 3. 打开这个文件夹并在顶部把路径**复制**下来
 
-   ![adb-path_copy](image\adb-path_copy.png)
+   <img src="image\adb-path_copy.png" alt="adb-path_copy" />
 
 4. 按下Win键，在搜索栏输入"环境变量"打开或者依次打开"设置-系统信息-高级系统设置"，再点击环境变量，在**系统变量**中找到Path并双击打开
 
-   ![environment-variable_path](image\environment-variable_path.png)
+   <img src="image\environment-variable_path.png" alt="environment-variable_path" />
 
 5. 点击"新建按钮"或点击下方空白栏，**将复制的路径粘贴进去，并一路点击确定**
 
-6. 最后使用**Win+R键输入"cmd"回车**，在黑窗口输入**"adb version"**，若出现版本号即为成功配置![cmd_adb-version](C:\Users\shiyu\Desktop\CdrsRoms\image\cmd_adb-version.png)
+6. 最后使用**Win+R键输入"cmd"回车**，在黑窗口输入**"adb version"**，若出现版本号即为成功配置<img src="image\cmd_adb-version.png" alt="cmd_adb-version" />
 
 ## FTP传输
