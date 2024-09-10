@@ -182,7 +182,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 **只要出现“安装耗时******秒****”，上方显示<u>成功</u>即为刷入成功**
 安装完成一般如下图所示
 
-<img src="image\TWRP_flash.png" alt="TWRP_flash" width="50%" />
+<img src="image\TWRP_flash.png" alt="TWRP_flash" style="zoom: 33%;" />
 
 
 ## <span id="2in1_flash">半卡刷(ADB Sideload)</span>
@@ -203,13 +203,15 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 ## 使用Root的三种方式
 
-### 出厂A13开始就要修补init_boot.img，A12及以下的修补boot.img
+## 刷入前请进行备份
+
+### 出厂A13开始就要修补init_boot.img，A12及以下的修补boot.img，此处以boot为例
 
 ### Magisk（面具）
 
 包自带Delta面具(即Kitsune Mask)，想要升降级就修补环境刷入即可
 
-线刷指令：fastboot flash 对应分区 img镜像（[刷入方式详见刷入第三方rec](#flash_rec)）、
+线刷指令：fastboot flash boot|boot_a/b|boot_ab boot.img（[刷入方式详见刷入第三方rec](#flash_rec)）
 
 
 
@@ -230,15 +232,29 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 ### Apatch
 
+1. 提取boot.img
+2. 打开Apatch，修补boot.img<img src="image\apatch_patch.jpg" alt="apatch_patch" width="50%" />
+3. 设置超级密钥后点击开始修补<img src="image\apatch_set-superkey.jpg" alt="apatch_set-superkey" width="50%" />
+4. 刷入修补过的boot.img，存储路径在最下方<img src="image\apatch_output-file.jpg" alt="apatch_output-file" width="50%" />
+5. 重启手机，打开Apatch，输入超级密钥，安装系统补丁，完成
 
+<img src="image\apatch_done.jpg" alt="apatch_done" />
 
-## 如何隐藏Root
+## 如何隐藏Root(面具)
 
-## 关于模块想说的话
+# 关于模块想说的话
 
 非必要不要刷一些玄学的优化模块，少刷模块别养蛊，**谨防格机模块，谨防格机模块，谨防格机模块，**救砖模块都救不了
 
-# 备份相关
+# 备份数据相关
+
+未root只推荐各大手机品牌自带的换机或备份软件
+
+root了推荐名叫"数据备份"的软件，应用分身也能备份
+
+root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接把数据传出去
+
+# 关于软件升降级 （核心破解）
 
 # 线刷官方教程-救砖
 
@@ -251,9 +267,9 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 2. 打开飞行模式，将下载好的基带文件替换进去 
 
 3. 关闭飞行等一段时间（30秒），有信号了重启两次（其实一次就行，不知道为什么都说两次） 
-  受当地网络环境和运营商的影响，请自行寻找合适的基带，请确保基带可在本机使用，请务必备份数据！
+    受当地网络环境和运营商的影响，请自行寻找合适的基带，请确保基带可在本机使用，请务必备份数据！
 
-  推荐多系统工具箱备份整个字库！ 
+  **推荐多系统工具箱备份整个字库！** 
 
 # 常见问题
 
