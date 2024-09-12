@@ -209,7 +209,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
    <img src="image/fastboot-Flash.png" alt="fastboot-Flash" />
    
-   **若出现闪退的情况请检查文件是否完整**
+   **若出现闪退的情况请检查文件是否完整，设备是否上锁**
 
 ## <span id="twrp_flash">卡刷</span>
 
@@ -230,7 +230,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 **出现一系列挂载失败的红字请无视，重启出现未安装系统请无视**
 
-**只要出现“安装耗时*****秒****”，上方显示<u>成功</u>即为刷入成功**
+**只要出现“安装耗时xx秒**”，上方显示**成功**即为刷入成功
 安装完成一般如下图所示
 
 <img src="image\TWRP_flash.png" alt="TWRP_flash" width="50%" />
@@ -242,7 +242,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 1. 手机进入rec界面，点击高级，ADB Sideload，滑动滑块
 
-   <img src="C:\Users\shiyu\Desktop\CdrsRoms\image\ADB-Sideload.png" alt="ADB-Sideload" width="50%" />
+   <img src="image\ADB-Sideload.png" alt="ADB-Sideload" width="50%" />
 
 2. 连接电脑，在黑窗口输入"adb sideload 文件完整路径"(**不要解压，直接用zip压缩包**)
 
@@ -287,9 +287,19 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 ### Apatch
 
 1. 提取boot.img
-2. 打开Apatch，修补boot.img<img src="image\apatch_patch.jpg" alt="apatch_patch" width="50%" />
-3. 设置超级密钥后点击开始修补<img src="image\apatch_set-superkey.jpg" alt="apatch_set-superkey" width="50%" />
-4. 刷入修补过的boot.img，存储路径在最下方<img src="image\apatch_output-file.jpg" alt="apatch_output-file" width="50%" />
+
+2. 打开Apatch，修补boot.img
+
+   <img src="image\apatch_patch.jpg" alt="apatch_patch" width="50%" />
+
+3. 设置超级密钥后点击开始修补
+
+   <img src="image\apatch_set-superkey.jpg" alt="apatch_set-superkey" width="50%" />
+
+4. 刷入修补过的boot.img，存储路径在最下方
+
+   <img src="image\apatch_output-file.jpg" alt="apatch_output-file" width="50%" />
+
 5. 重启手机，打开Apatch，输入超级密钥，安装系统补丁，完成
 
 <img src="image\apatch_done.jpg" alt="apatch_done" />
