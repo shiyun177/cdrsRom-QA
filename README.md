@@ -1,4 +1,44 @@
-# 前言-你需要知道的一些东西
+# 目录
+
+- [前言](#start)
+  - [机型代号](#device_Code)
+- [解锁](#unlock_Bootloader)
+- [系统介绍](#sys_introduction)
+  - [系统的选择](#select_system)
+  - [EXT4与EROFS的区别和内核](#sys_Format)
+- [刷机教程](#flash_device)
+  - [刷入第三方REC](#flash_rec)
+  - [刷入系统](#flash_system)
+- [Root相关](#about_root)
+  - [如何root](#how_to_root)
+  - [隐藏root-面具](#hide_root)
+    - [MagiskHide](#magiskhide)
+    - [Sulist](#sulist)
+  - [其他隐藏root的方法](#hide_root_other)
+  - [关于模块想说的话](#about_modules)
+- [备份数据](#backup_data)
+- [软件升降级-核心破解](#core_patch)
+- [修改软件版本号](#edit_version)
+- [官方线刷教程-救砖](#miflash)
+- [如何替换基带](#baseband)
+- [常见问题](#FAQ)
+  - [提示下载面具](#magisk_download)
+  - [掉rec](#mi_rec)
+  - [锁屏密码错乱、无法输入，等待目标应用响应等](#waiting_response)
+  - [安全管家打不开](#securitycenter_cannot_open)
+  - [没有主题壁纸和手机管家图标](#not_found_themestore_and_securitymanager)
+  - [momo包管理服务异常](#momo_package_service_exception)
+  - [如何校验文件完整性](#check_File)
+  - [线刷刷不进去](#usb_cannot_flash)
+  - [线刷电脑没反应，无法输入](#unable_to_input)
+  - [如何安装ADB](#adb_install)
+  - [FTP传输](#use_ftp)
+  - [声音不大，音质一般](#sound_effects)
+
+
+
+
+# <span id="start">前言-你需要知道的一些东西</span>
 
 > ### 此教程面向小米10系列，其他小米设备也可以参考
 >
@@ -16,7 +56,7 @@
 
 ------
 
-# 关于解锁
+# <span id="unlock_Bootloader">关于解锁</span>
 
 如果您是MIUI系统，直接在电脑上下载小米解锁工具按着官方的步骤来
 
@@ -24,12 +64,14 @@
 
 若想跳过168小时可以去看看有没有人秒解，当然，这需要钞能力
 
-# 系统介绍
+
+
+# <span id="sys_introduction">系统介绍</span>
 
 > ### 主要有安卓13(A13)和安卓14(A14)两大版本
 >
 
-### 系统有什么区别？怎么选？
+## <span id="select_system">系统有什么区别？怎么选？</span>
 
 > ### A13主要是稳定，省电，追求功耗的可选此。
 >
@@ -63,7 +105,7 @@
 
 **A14的12su相对省电，13u和14u现在功能特性都差不多，14u多了个定位卫星**
 
-**养老就12x移植**
+**养老就12x移植，14u移植**
 
 
 
@@ -85,7 +127,9 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 想上车内核可以咨询群内管理@The Voyager （QQ：727127746）有更多新功能使用，并且持续优化调度
 
-# 刷机教程
+
+
+# <span id="flash_device">刷机教程</span>
 
 ## <span id="flash_rec">（可选）刷入第三方Recovery（REC）</span>
 
@@ -130,17 +174,17 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 
 
-## 刷入系统
+## <span id="flash_system">刷入系统</span>
 
 **前言：此教程为从零开始刷机教程，请根据自己需求选择观看。**
 
-**需要准备：系统包，电脑/手机TWRP。**
+**需要准备：系统包，电脑/手机TWRP。（确定下载的是对应机型，不要下错了！）**
 
 **此教程将说明：线刷/卡刷/半卡刷(ADB Sideload)**
 
 **点此跳转对应刷入方式：**[线刷](#usb_flash)		[卡刷](twrp_flash)		[半卡刷](#2in1_flash)
 
-<img src="image\system-package_name.jpg" alt="system-package_name" style="zoom: 80%;" />
+<img src="image\system-package_name.jpg" alt="system-package_name" />
 
 **文件名为：Ext4_cmi_Mi10Pro_Cdrs_HyperOS1.0.15.0.UMACNXM(13U移植)_A14_da608.zip**
 
@@ -179,10 +223,10 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 **出现一系列挂载失败的红字请无视，重启出现未安装系统请无视**
 
-**只要出现“安装耗时******秒****”，上方显示<u>成功</u>即为刷入成功**
+**只要出现“安装耗时*****秒****”，上方显示<u>成功</u>即为刷入成功**
 安装完成一般如下图所示
 
-<img src="image\TWRP_flash.png" alt="TWRP_flash" style="zoom: 33%;" />
+<img src="image\TWRP_flash.png" alt="TWRP_flash" width="50%" />
 
 
 ## <span id="2in1_flash">半卡刷(ADB Sideload)</span>
@@ -191,7 +235,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 1. 手机进入rec界面，点击高级，ADB Sideload，滑动滑块
 
-   <img src="C:\Users\shiyu\Desktop\CdrsRoms\image\ADB-Sideload.png" alt="ADB-Sideload" style="zoom:33%;" />
+   <img src="C:\Users\shiyu\Desktop\CdrsRoms\image\ADB-Sideload.png" alt="ADB-Sideload" width="50%" />
 
 2. 连接电脑，在黑窗口输入"adb sideload 文件完整路径"(**不要解压，直接用zip压缩包**)
 
@@ -199,11 +243,14 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 
 
-# Root相关
+# <span id="about_root">Root相关</span>
 
-## 使用Root的三种方式
 
-## 刷入前请进行备份
+
+## <span id="how_to_root">使用Root的三种方式</span>
+
+> ### 刷入前请进行备份
+>
 
 ### 出厂A13开始就要修补init_boot.img，A12及以下的修补boot.img，此处以boot为例
 
@@ -240,13 +287,53 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 <img src="image\apatch_done.jpg" alt="apatch_done" />
 
-## 如何隐藏Root(面具)
 
-# 关于模块想说的话
+
+## <span id="hide_root">如何隐藏Root-面具</span>
+
+> **狐狸面具不要使用Shimako模块来隐藏root，环境需要修补的一定要修补，不然泄露root**
+
+### <span id="magiskhide">仅使用MagiskHide</span>
+
+<img src="image\magisk_magiskhide.jpg" alt="magisk-magiskhide" width="50%" />
+
+在配置MagiskHide中"，给应用打勾是隐藏该应用的root权限
+
+<img src="image\magiskhide_list.jpg" alt="magiskhide_list" />
+
+有些软件会出现这种，上方蓝色条只有一部分的情况，这时就需要点击一次勾以外的地方展开它，然后去点复选框才能有一个完全的隐藏
+
+<img src="image\magiskhide_more-list.jpg" alt="magiskhide_more-list" width="50%" />
+
+## <span id="sulist">使用SuList</span>
+
+<img src="image\magisk_sulist.jpg" alt="magisk_sulist" width="50%" />
+
+和上方MagiskHide差不多，唯一的区别就是“配置SuList”中打勾的是可使用root权限的
+
+**若配置列表没有应用，请检查读取应用列表权限是否打开 **
+
+**有部分软件检测到root，请升级到新版面具**
+
+**若有个别模块或软件（如八达通等app）无法使用，请关掉SuList，使用MagiskHide**
+
+
+
+### <span id="hide_root_other">其他隐藏root的方法（无教程，自行寻找各种模块，只提供思路）</span>
+
+安装zygisk next，shamiko，tricky store，lsposed npm模块，lsp安装隐藏应用列表
+
+<img src="image\magisk_hide-root-pro.jpg" alt="magisk_hide-root-pro" width="50%" />
+
+
+
+# <span id="about_modules">关于模块想说的话</span>
 
 非必要不要刷一些玄学的优化模块，少刷模块别养蛊，**谨防格机模块，谨防格机模块，谨防格机模块，**救砖模块都救不了
 
-# 备份数据相关
+
+
+# <span id="backup_data">备份数据相关</span>
 
 未root只推荐各大手机品牌自带的换机或备份软件
 
@@ -254,11 +341,87 @@ root了推荐名叫"数据备份"的软件，应用分身也能备份
 
 root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接把数据传出去
 
-# 关于软件升降级 （核心破解）
 
-# 线刷官方教程-救砖
 
-# 如何替换基带
+# <span id="core_patch">关于软件升降级 （核心破解）</span>
+
+请在LSPosed中安装核心破解，并勾选“系统框架”
+
+<img src="image\lsposed_core-patch.jpg" alt="lsposed_core-patch" width="50%" />
+
+然后用mt管理器直接安装
+
+<img src="image\mt_install.jpg" alt="mt_install" width="50%" />
+
+若仍安装失败，请点击模块设置，把里面全勾重启
+
+<img src="image\core-patch_setting.jpg" alt="core-patch_setting" width="50%" />
+
+**注：降级系统软件重启会恢复原来的系统版本，如一定需要降级请自行修改版本号确保高于原软件版本号**
+
+
+
+# <span id="edit_version">如何修改软件版本号</span>
+
+以手机管家举例，我们需要修改版本名和版本号，如图所示
+
+<img src="image\edit_version.jpg" alt="edit_version" width="50%" />
+
+点击查看，点击 AndroidManifest.xml，再点击反编译
+
+<img src="image\edit-version_edit-xml.jpg" alt="edit-version_edit-xml" width="50%" />
+
+修改 android:versionCode 和 android:versionName 后面的值，让其大于原来数值即可
+
+点击保存，**不要勾选自动签名**，完成
+
+
+
+# <span id="miflash">线刷官方教程-救砖</span>
+
+前期准备：下载官方线刷包（[推荐在此下载](https://xiaomirom.com/)），miflash小米线刷工具包[点此跳转](https://miuiver.com/miflash/)，没有问题的 USB 2.0数据线
+
+1. 将官方线刷包解压到只剩文件夹**（注意存放的路径不能有中文字符和空格，不要放在U盘）**
+
+2. 打开文件夹，编辑flash_all.bat
+
+   <img src="image\edit_flash-all-bat.png" alt="edit_flash-all-bat" />
+
+   框选的每一行前面都可以加上" **::** "注释掉，或者直接删除
+
+3. 打开 XiaoMiFlash.exe ，点击左上角Configuration，再点击MiFlash Configuration，将CheckPoint清空
+
+   <img src="image\checkpoint_clear.png" alt="checkpoint_clear" />
+
+   接着点击Driver 安装驱动
+
+   <img src="image\install_driver.png" alt="install_driver" />
+
+4. 点击选择，选择系统包那个文件夹点击确定
+
+5. 右下角选择**全部删除！！！全部删除！！！全部删除！！！（上锁了自行解决！！！）**
+
+   <img src="image\check_flash-all.png" alt="check_flash-all" />
+
+6. **数据线插入 USB 2.0接口，手机进入fastboot模式，点击加载设备，显示设备后确认所有信息无误，是对应机型刷机包，也选的全部删除不是lock！全部确认完毕点击刷机并等待**
+
+   <img src="image\system_flash.png" alt="system_flash" />
+
+   
+
+## 其他问题
+
+若出现了 "Missmatching image and device error"或下方图片第一行样式长时间不动，请检查系统包与设备机型是否一致，确认无误的话编辑 flash_all.bat ，将下方框选的命令使用 " :: "注释掉或直接删除<img src="image\delete_check-device.png" alt="delete_check-device" />
+
+### 更多问题可在miuiver 找到答案
+
+线刷指南（[点此跳转](https://miuiver.com/how-to-flash-xiaomi-phone/)）		
+
+线刷报错问题及解决方法（[点此跳转](https://miuiver.com/miflash-problem-list/)）
+
+
+
+# <span id="baseband">如何替换基带</span>
 
 **注意！请备份原基带！无论是多系统工具箱备份字库还是复制大法，请务必备份，推荐备份字库！请确保基带可在本机使用！** 
 
@@ -271,11 +434,77 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
   **推荐多系统工具箱备份整个字库！** 
 
-# 常见问题
+# <span id="FAQ">常见问题</span>
 
-## 声音不大，音质一般
 
-请将音质音效里的场景选择切换为人声
+
+## <span id="magisk_download">它为什么要下载重新下载面具</span>
+
+刷机后首次打开面具提示修复运行环境重启手机会出现掉面具图标和下载转圈问题（如下图）
+
+自行下载面具apk安装一下即可，可在群文件下载，或者下方链接
+
+ 面具26.4-kitsune-2稳定版：https://www.123pan.com/s/p5KDVv-ijcwd.html
+
+<img src="image\magisk_download.jpg" alt="magisk_download" />
+
+<img src="image\magisk_null.jpg" alt="magisk_null" />
+
+
+
+## <span id="mi_rec">为什么我的rec没了</span>
+
+刷机时选择不root会掉twrp，变成官方rec，无解，请重新刷入
+
+
+
+## <span id="waiting_response">锁屏密码错乱、无法输入，等待目标应用响应等</span>
+
+进rec或者mt管理器:/data/system/locksettings.db删除这个文件，然后重启。 
+手机这种情况多半是安全补丁变旧的锅
+
+
+
+## 不双清刷机之后如果出现某个软件闪退，打不开，出错等问题 
+
+进rec或mt管理器：/data/system/package_cache/
+删除这个文件夹，然后重启手机。 
+rec（twrp）需点击高级-文件管理方可操作 
+
+
+
+## 刷机后进桌面：卡重启、打开应用无响应等一切问题
+
+rec主页-高级-文件管理删除以下文件即可 
+/data/dalvik-cache/ 
+/data/system/package_cache/ 
+/data/system/locksettings.db 
+/data/system/locksettings.db-journal 
+
+
+
+## <span id="securitycenter_cannot_open">安全管家打不开</span>
+
+尝试清除安全服务全部数据，重新安装，mt管理器删除/data/system/package_cache/这个文件夹后重启
+
+
+
+## <span id="not_found_themestore_and_securitymanager">没有主题壁纸和手机管家图标</span>
+
+mt管理器进
+/product/data-app/MIUISecurityManager/
+/product/data-app/MIUIThemeStore/
+手动安装一下即可
+
+
+
+## <span id="momo_package_service_exception">momo包管理服务异常</span>
+
+把核心破解中下图开关关掉就解决
+
+<img src="image\momo_core-patch-close.jpg" alt="momo_core-patch-close" width="50%" />
+
+
 
 ## <span id="check_File">如何校验文件完整性</span>
 
@@ -303,19 +532,27 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 ### <span id="android_Check">Android</span>
 
-以MT管理器为例，**长按文件，依次点击属性-校验，比对md5是否与文件一致，不一致请重新下载后再次比对**<img src="C:\Users\shiyu\Desktop\CdrsRoms\image\android_check-md5.jpg" alt="android_check-md5" style="zoom:33%;" />
+以MT管理器为例，**长按文件，依次点击属性-校验，比对md5是否与文件一致，不一致请重新下载后再次比对**<img src="image\android_check-md5.jpg" alt="android_check-md5" />
+
+### <span id="linux_Check">Linux</span>
+
+输入md5sum 文件名，回车即可
+
+<img src="image\Linux_check-md5.png" alt="Linux_check-md5" width="50%" />
 
 
 
-
-
-## 为什么线刷刷不进去
+## <span id="usb_cannot_flash">为什么线刷刷不进去</span>
 
 请排查您的问题，USB_Driver驱动有没有安装，是否为USB2.0数据线和接口，系统文件是否完整
 
-## 为什么线刷电脑没反应，无法输入
+
+
+## <span id="unable_to_input">为什么线刷电脑没反应，无法输入</span>
 
 请将手机进入fastboot模式并连接电脑
+
+
 
 ## <span id="adb_install">如何安装ADB</span>
 
@@ -337,4 +574,40 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 6. 最后使用**Win+R键输入"cmd"回车**，在黑窗口输入**"adb version"**，若出现版本号即为成功配置<img src="image\cmd_adb-version.png" alt="cmd_adb-version" />
 
-## FTP传输
+
+
+## <span id="use_ftp">FTP传输</span>
+
+1. 手机在文件管理点击右上角，选择远程管理
+
+<img src="image\file-manager.jpg" alt="file-manager" width="50%" />
+
+2. 再点击右上角来到远程管理的设置界面
+
+<img src="image\file-maneger_setting.jpg" alt="file-maneger_setting" width="50%" />
+
+​	匿名登录关闭则需要输入用户名和密码，反之打开则不需要
+
+3. 返回上一级
+
+4. 点击启动服务，Windows在此电脑上方地址栏输入蓝字即可
+
+   <img src="image\file-manager-start.jpg" alt="file-manager-start" width="50%" />
+
+   手机以mt管理器举例
+
+   <img src="image\mt_add-ftp.jpg" alt="mt_add-ftp" />
+
+5. 点击三个点，选择添加网络存储，FTP
+
+   <img src="image\mt_ftp-setting.jpg" alt="mt_ftp-setting" width="50%" />
+
+   主机填写上方"ftp://后面的IP地址"，端口填写上方" : "后面的数字
+
+   设置了用户名和密码就输入进去，编码确认和上方传输编码一致，否则显示乱码
+
+6. 点击测试，显示测试成功保存即可，这时就能看见网络一栏多了个地址，点击即可连接
+
+## <span id="sound_effects">声音不大，音质一般</span>
+
+请将音质音效里的场景选择切换为人声
