@@ -9,6 +9,9 @@
 - [刷机教程](#flash_device)
   - [刷入第三方REC](#flash_rec)
   - [刷入系统](#flash_system)
+    - [线刷](#usb_flash)
+    - [卡刷](#twrp_flash)
+    - [半卡刷-ADB Sideload](#2in1_flash)
 - [Root相关](#about_root)
   - [如何root](#how_to_root)
   - [隐藏root-面具](#hide_root)
@@ -22,6 +25,7 @@
 - [官方线刷教程-救砖](#miflash)
 - [如何替换基带](#baseband)
 - [常见问题](#FAQ)
+  - [显示错误1](#error1)
   - [提示下载面具](#magisk_download)
   - [掉rec](#mi_rec)
   - [锁屏密码错乱、无法输入，等待目标应用响应等](#waiting_response)
@@ -34,6 +38,7 @@
   - [如何安装ADB](#adb_install)
   - [FTP传输](#use_ftp)
   - [声音不大，音质一般](#sound_effects)
+
 
 
 
@@ -182,7 +187,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 **此教程将说明：线刷/卡刷/半卡刷(ADB Sideload)**
 
-**点此跳转对应刷入方式：**[线刷](#usb_flash)		[卡刷](twrp_flash)		[半卡刷](#2in1_flash)
+**点此跳转对应刷入方式：**[线刷](#usb_flash)		[卡刷](#twrp_flash)		[半卡刷](#2in1_flash)
 
 <img src="image\system-package_name.jpg" alt="system-package_name" />
 
@@ -203,6 +208,8 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 3. 手机启动到fastboot模式并连接电脑，点击Cdrs一键线刷工具Flash.bat，并根据提示输入数字，最后等待重启即可
 
    <img src="image/fastboot-Flash.png" alt="fastboot-Flash" />
+   
+   **若出现闪退的情况请检查文件是否完整**
 
 ## <span id="twrp_flash">卡刷</span>
 
@@ -311,7 +318,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 和上方MagiskHide差不多，唯一的区别就是“配置SuList”中打勾的是可使用root权限的
 
-**若配置列表没有应用，请检查读取应用列表权限是否打开 **
+**若配置列表没有应用，请检查读取应用列表权限是否打开**
 
 **有部分软件检测到root，请升级到新版面具**
 
@@ -438,6 +445,12 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 
 
+## <span id="error1">刷入系统或内核显示错误1</span>
+
+请重新下载文件，错误1一般是文件不完整
+
+
+
 ## <span id="magisk_download">它为什么要下载重新下载面具</span>
 
 刷机后首次打开面具提示修复运行环境重启手机会出现掉面具图标和下载转圈问题（如下图）
@@ -446,7 +459,7 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
  面具26.4-kitsune-2稳定版：https://www.123pan.com/s/p5KDVv-ijcwd.html
 
-<img src="image\magisk_download.jpg" alt="magisk_download" />
+<img src="image\magisk_download.jpg" alt="magisk_download" width="75%" />
 
 <img src="image\magisk_null.jpg" alt="magisk_null" />
 
@@ -532,7 +545,9 @@ mt管理器进
 
 ### <span id="android_Check">Android</span>
 
-以MT管理器为例，**长按文件，依次点击属性-校验，比对md5是否与文件一致，不一致请重新下载后再次比对**<img src="image\android_check-md5.jpg" alt="android_check-md5" />
+以MT管理器为例，**长按文件，依次点击属性-校验，比对md5是否与文件一致，不一致请重新下载后再次比对**
+
+<img src="image\android_check-md5.jpg" alt="android_check-md5" width=50% />
 
 ### <span id="linux_Check">Linux</span>
 
