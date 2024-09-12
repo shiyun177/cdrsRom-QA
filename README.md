@@ -14,6 +14,9 @@
     - [半卡刷-ADB Sideload](#2in1_flash)
 - [Root相关](#about_root)
   - [如何root](#how_to_root)
+    - [Magisk](#magisk)
+    - [KernelSU](#ksu)
+    - [Apatch](#apatch)
   - [隐藏root-面具](#hide_root)
     - [MagiskHide](#magiskhide)
     - [Sulist](#sulist)
@@ -43,13 +46,13 @@
 
 
 
-# <span id="start">前言-你需要知道的一些东西</span>
+# <a id="start" style="color:black">前言-你需要知道的一些东西</a>
 
 > ### 此教程面向小米10系列，其他小米设备也可以参考
 >
 > ### 电脑系统以Windows为主，演示系统：Windows 11 23H2
 
-### <span id="device_Code">机型代号 </span>：
+### <a id="device_Code" style="color:black">机型代号 </a>：
 
 **Mi10：(Umi)**
 
@@ -61,7 +64,7 @@
 
 ------
 
-# <a id="unlock_Bootloader">关于解锁</a>
+# <a id="unlock_Bootloader" style="color:black">关于解锁</a>
 
 如果您是MIUI系统，直接在电脑上下载小米解锁工具按着官方的步骤来
 
@@ -71,12 +74,12 @@
 
 
 
-# <span id="sys_introduction">系统介绍</span>
+# <a id="sys_introduction" style="color:black">系统介绍</a>
 
 > ### 主要有安卓13(A13)和安卓14(A14)两大版本
 >
 
-## <span id="select_system">系统有什么区别？怎么选？</span>
+## <a id="select_system" style="color:black">系统有什么区别？怎么选？</a>
 
 > ### A13主要是稳定，省电，追求功耗的可选此。
 >
@@ -122,7 +125,7 @@
 
 
 
-## <span id="sys_Format">EXT4与EROFS的区别与内核</span>
+## <a id="sys_Format" style="color:black">EXT4与EROFS的区别与内核</a>
 
 EXT4使用官方内核，EROFS使用TV的VK内核
 
@@ -134,9 +137,9 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 
 
-# <span id="flash_device">刷机教程</span>
+# <a id="flash_device" style="color:black">刷机教程</a>
 
-## <span id="flash_rec">（可选）刷入第三方Recovery（REC）</span>
+## <a id="flash_rec" style="color:black">（可选）刷入第三方Recovery（REC）</a>
 
 > ## 绝大部分人选择TWRP作为第三方REC使用，故此教程使用TWRP作为演示，其他REC也可按着此教程操作
 
@@ -179,7 +182,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 
 
-## <span id="flash_system">刷入系统</span>
+## <a id="flash_system" style="color:black">刷入系统</a>
 
 **前言：此教程为从零开始刷机教程，请根据自己需求选择观看。**
 
@@ -197,7 +200,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 [系统格式详情点此跳转](#sys_Format)		[机型代号详情点此跳转](#device_Code)
 
-## <span id="usb_flash">线刷</span>
+## <a id="usb_flash" style="color:black">线刷</a>
 
 **首先请先检查您的系统包确认是否完整（[如何检查请点这里](#check_File)**）
 
@@ -211,7 +214,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
    
    **若出现闪退的情况请检查文件是否完整，设备是否上锁**
 
-## <span id="twrp_flash">卡刷</span>
+## <a id="twrp_flash" style="color:black">卡刷</a>
 
 **首先请先检查您的系统包确认是否完整（[如何检查请点这里](#check_File)**）
 
@@ -236,7 +239,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 <img src="image\TWRP_flash.png" alt="TWRP_flash" width="50%" />
 
 
-## <span id="2in1_flash">半卡刷(ADB Sideload)</span>
+## <a id="2in1_flash" style="color:black">半卡刷(ADB Sideload)</a>
 
 **首先请先检查您的系统包确认是否完整（[如何检查请点这里](#check_File)），并且确定已经配置ADB环境([点此查看如何配置](#adb_install))**
 
@@ -250,18 +253,18 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 
 
-# <span id="about_root">Root相关</span>
+# <a id="about_root" style="color:black">Root相关</a>
 
 
 
-## <span id="how_to_root">使用Root的三种方式</span>
+## <a id="how_to_root" style="color:black">使用Root的三种方式</a>
 
 > ### 刷入前请进行备份
 >
 
 ### 出厂A13开始就要修补init_boot.img，A12及以下的修补boot.img，此处以boot为例
 
-### Magisk（面具）
+### <a id="magisk" style="color:black">Magisk（面具）</a>
 
 包自带Delta面具(即Kitsune Mask)，想要升降级就修补环境刷入即可
 
@@ -275,7 +278,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 相关链接：[Magisk原版仓库](https://github.com/topjohnwu/Magisk)		[Kitsune Mask (Delta仓库)](https://github.com/HuskyDG/magisk-files)		[Magisk Alpha仓库](https://install.appcenter.ms/users/vvb2060/apps/magisk/distribution_groups/public)
 
-### KernelSU（KSU）
+### <a id="ksu" style="color:black">KernelSU（KSU）</a>
 
 **若使用KSU则原来所有Magisk模块都会被清楚，请自行考虑**
 
@@ -284,7 +287,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 相关链接&其他安装方法：https://kernelsu.org/zh_CN/guide/what-is-kernelsu.html
 
-### Apatch
+### <a id="apatch" style="color:black">Apatch</a>
 
 1. 提取boot.img
 
@@ -306,11 +309,11 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 
 
-## <span id="hide_root">如何隐藏Root-面具</span>
+## <a id="hide_root" style="color:black">如何隐藏Root-面具</a>
 
 > **狐狸面具不要使用Shimako模块来隐藏root，环境需要修补的一定要修补，不然泄露root**
 
-### <span id="magiskhide">仅使用MagiskHide</span>
+### <a id="magiskhide" style="color:black">仅使用MagiskHide</a>
 
 <img src="image\magisk_magiskhide.jpg" alt="magisk-magiskhide" width="50%" />
 
@@ -322,7 +325,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 <img src="image\magiskhide_more-list.jpg" alt="magiskhide_more-list" width="50%" />
 
-## <span id="sulist">使用SuList</span>
+## <a id="sulist" style="color:black">使用SuList</a>
 
 <img src="image\magisk_sulist.jpg" alt="magisk_sulist" width="50%" />
 
@@ -336,7 +339,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 
 
-### <span id="hide_root_other">其他隐藏root的方法（无教程，自行寻找各种模块，只提供思路）</span>
+### <a id="hide_root_other" style="color:black">其他隐藏root的方法（无教程，自行寻找各种模块，只提供思路）</a>
 
 安装zygisk next，shamiko，tricky store，lsposed npm模块，lsp安装隐藏应用列表
 
@@ -344,13 +347,13 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 
 
-# <span id="about_modules">关于模块想说的话</span>
+# <a id="about_modules" style="color:black">关于模块想说的话</a>
 
 非必要不要刷一些玄学的优化模块，少刷模块别养蛊，**谨防格机模块，谨防格机模块，谨防格机模块，**救砖模块都救不了
 
 
 
-# <span id="backup_data">备份数据相关</span>
+# <a id="backup_data" style="color:black">备份数据相关</a>
 
 未root只推荐各大手机品牌自带的换机或备份软件
 
@@ -360,7 +363,7 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 
 
-# <span id="core_patch">关于软件升降级 （核心破解）</span>
+# <a id="core_patch" style="color:black">关于软件升降级 （核心破解）</a>
 
 请在LSPosed中安装核心破解，并勾选“系统框架”
 
@@ -378,7 +381,7 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 
 
-# <span id="edit_version">如何修改软件版本号</span>
+# <a id="edit_version" style="color:black">如何修改软件版本号</a>
 
 以手机管家举例，我们需要修改版本名和版本号，如图所示
 
@@ -394,7 +397,7 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 
 
-# <span id="miflash">线刷官方教程-救砖</span>
+# <a id="miflash" style="color:black">线刷官方教程-救砖</a>
 
 前期准备：下载官方线刷包（[推荐在此下载](https://xiaomirom.com/)），miflash小米线刷工具包[点此跳转](https://miuiver.com/miflash/)，没有问题的 USB 2.0数据线
 
@@ -438,7 +441,7 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 
 
-# <span id="baseband">如何替换基带</span>
+# <a id="baseband" style="color:black">如何替换基带</a>
 
 **注意！请备份原基带！无论是多系统工具箱备份字库还是复制大法，请务必备份，推荐备份字库！请确保基带可在本机使用！** 
 
@@ -451,17 +454,17 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
   **推荐多系统工具箱备份整个字库！** 
 
-# <span id="FAQ">常见问题</span>
+# <a id="FAQ" style="color:black">常见问题</a>
 
 
 
-## <span id="error1">刷入系统或内核显示错误1</span>
+## <a id="error1" style="color:black">刷入系统或内核显示错误1</a>
 
 请重新下载文件，错误1一般是文件不完整
 
 
 
-## <span id="magisk_download">它为什么要下载重新下载面具</span>
+## <a id="magisk_download" style="color:black">它为什么要下载重新下载面具</a>
 
 刷机后首次打开面具提示修复运行环境重启手机会出现掉面具图标和下载转圈问题（如下图）
 
@@ -475,13 +478,13 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 
 
-## <span id="mi_rec">为什么我的rec没了</span>
+## <a id="mi_rec" style="color:black">为什么我的rec没了</a>
 
 刷机时选择不root会掉twrp，变成官方rec，无解，请重新刷入
 
 
 
-## <span id="waiting_response">锁屏密码错乱、无法输入，等待目标应用响应等</span>
+## <a id="waiting_response" style="color:black">锁屏密码错乱、无法输入，等待目标应用响应等</a>
 
 进rec或者mt管理器:/data/system/locksettings.db删除这个文件，然后重启。 
 手机这种情况多半是安全补丁变旧的锅
@@ -506,13 +509,13 @@ rec主页-高级-文件管理删除以下文件即可
 
 
 
-## <span id="securitycenter_cannot_open">安全管家打不开</span>
+## <a id="securitycenter_cannot_open" style="color:black">安全管家打不开</a>
 
 尝试清除安全服务全部数据，重新安装，mt管理器删除/data/system/package_cache/这个文件夹后重启
 
 
 
-## <span id="not_found_themestore_and_securitymanager">没有主题壁纸和手机管家图标</span>
+## <a id="not_found_themestore_and_securitymanager" style="color:black">没有主题壁纸和手机管家图标</a>
 
 mt管理器进
 /product/data-app/MIUISecurityManager/
@@ -521,7 +524,7 @@ mt管理器进
 
 
 
-## <span id="momo_package_service_exception">momo包管理服务异常</span>
+## <a id="momo_package_service_exception" style="color:black">momo包管理服务异常</a>
 
 把核心破解中下图开关关掉就解决
 
@@ -529,7 +532,7 @@ mt管理器进
 
 
 
-## <span id="check_File">如何校验文件完整性</span>
+## <a id="check_File" style="color:black">如何校验文件完整性</a>
 
 **在刷机或进行重要且有风险的操作之前，我们建议先校验文件确保其完整性**
 
@@ -543,7 +546,7 @@ mt管理器进
 
 -----
 
-### <span id="windows_Check">Windows</span>
+### <a id="windows_Check" style="color:black">Windows</a>
 
 打开cmd，输入"**certutil -hashfile <文件名称(绝对路径)> MD5**"，回车即可校验
 
@@ -553,13 +556,13 @@ mt管理器进
 
 
 
-### <span id="android_Check">Android</span>
+### <a id="android_Check" style="color:black">Android</a>
 
 以MT管理器为例，**长按文件，依次点击属性-校验，比对md5是否与文件一致，不一致请重新下载后再次比对**
 
 <img src="image\android_check-md5.jpg" alt="android_check-md5" width=50% />
 
-### <span id="linux_Check">Linux</span>
+### <a id="linux_Check" style="color:black">Linux</a>
 
 输入md5sum 文件名，回车即可
 
@@ -567,19 +570,19 @@ mt管理器进
 
 
 
-## <span id="usb_cannot_flash">为什么线刷刷不进去</span>
+## <a id="usb_cannot_flash" style="color:black">为什么线刷刷不进去</a>
 
 请排查您的问题，USB_Driver驱动有没有安装，是否为USB2.0数据线和接口，系统文件是否完整
 
 
 
-## <span id="unable_to_input">为什么线刷电脑没反应，无法输入</span>
+## <a id="unable_to_input" style="color:black">为什么线刷电脑没反应，无法输入</a>
 
 请将手机进入fastboot模式并连接电脑
 
 
 
-## <span id="adb_install">如何安装ADB</span>
+## <a id="adb_install" style="color:black">如何安装ADB</a>
 
 1. [点此跳转到下载界面并下载对应系统的 Platform-Tools 工具包](https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn#downloads)
 
@@ -601,7 +604,7 @@ mt管理器进
 
 
 
-## <span id="use_ftp">FTP传输</span>
+## <a id="use_ftp" style="color:black">FTP传输</a>
 
 1. 手机在文件管理点击右上角，选择远程管理
 
@@ -633,6 +636,6 @@ mt管理器进
 
 6. 点击测试，显示测试成功保存即可，这时就能看见网络一栏多了个地址，点击即可连接
 
-## <span id="sound_effects">声音不大，音质一般</span>
+## <a id="sound_effects" style="color:black">声音不大，音质一般</a>
 
 请将音质音效里的场景选择切换为人声
