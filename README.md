@@ -41,6 +41,7 @@
   - [如何安装ADB](#adb_install)
   - [FTP传输](#use_ftp)
   - [声音不大，音质一般](#sound_effects)
+  - [破音，上下声音不一致](#speaker_pa_calibration_test)
 
 
 
@@ -270,7 +271,7 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 
 包自带Delta面具(即Kitsune Mask)，想要升降级就修补环境刷入即可
 
-注：最好不要更新面具版本，否则有可能会导致相机少焦段，也不要去降级，不完全卸载环境直接降会无法获取
+注：最好不要去降级，管理器版本比内核修补版本低并且不完全卸载环境直接降会无法获取甚至卡重启
 
 线刷指令：fastboot flash boot|boot_a/b|boot_ab boot.img（[刷入方式详见刷入第三方rec](#flash_rec)）
 
@@ -641,6 +642,14 @@ mt管理器进
 ## <a id="sound_effects">声音不大，音质一般</a>
 
 请将音质音效里的场景选择切换为人声
+
+
+
+## <a id="speaker_pa_calibration_test">破音，上下声音不一致</a>
+
+点五次内核版本或者拨号盘输入*# *#6484# *# *进入cit
+
+点击右上角，辅助工具，扬声器功放校准测试
 
 
 
