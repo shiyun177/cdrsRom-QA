@@ -213,6 +213,8 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
    <img src="image/fastboot-Flash.png" alt="fastboot-Flash" />
    
    **若出现闪退的情况请检查文件是否完整，设备是否上锁**
+   
+   **若窗口左上角显示"选择",请按一次回车以继续**
 
 ## <a id="twrp_flash">卡刷</a>
 
@@ -267,6 +269,8 @@ EROFS不使用官方内核是因为HyperOS系统官方默认开启墓碑v2机制
 ### <a id="magisk">Magisk（面具）</a>
 
 包自带Delta面具(即Kitsune Mask)，想要升降级就修补环境刷入即可
+
+注：最好不要更新面具版本，否则有可能会导致相机少焦段，也不要去降级，不完全卸载环境直接降会无法获取
 
 线刷指令：fastboot flash boot|boot_a/b|boot_ab boot.img（[刷入方式详见刷入第三方rec](#flash_rec)）
 
@@ -468,9 +472,7 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 刷机后首次打开面具提示修复运行环境重启手机会出现掉面具图标和下载转圈问题（如下图）
 
-自行下载面具apk安装一下即可，可在群文件下载，或者下方链接
-
- 面具26.4-kitsune-2稳定版：https://www.123pan.com/s/p5KDVv-ijcwd.html
+自行下载面具apk安装一下即可，可在群文件下载，或者去官方仓库下载
 
 <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/magisk_download.jpg" alt="magisk_download" width="75%" />
 
@@ -648,7 +650,7 @@ mt管理器进
 
 <p align="right">Author: 123nhh🍥</p>
 <p align="right">shiyun177🍥</p>
-<p align="right">Date: 2024/9/12</p>
+<p align="right">Date: 2024/9/13</p>
 
 
 
