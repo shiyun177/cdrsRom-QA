@@ -483,7 +483,7 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 ## <a id="mi_rec">为什么我的rec没了</a>
 
-刷机时选择不root会掉twrp，变成官方rec，无解，请重新刷入
+刷机时选择不root并且为官方内核会掉twrp，变成官方rec，请提前备份重新刷入rec，或者使用修改过的boot
 
 
 
