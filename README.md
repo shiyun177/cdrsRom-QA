@@ -28,6 +28,8 @@
 - [官方线刷教程-救砖](#miflash)
 - [如何替换基带](#baseband)
 - [常见问题](#FAQ)
+  - [系统覆盖升降级须知](#system_overlay_update)
+  - [NFC 2.0 相关问题](#nfc_2.0)
   - [显示错误1](#error1)
   - [提示下载面具](#magisk_download)
   - [掉rec](#mi_rec)
@@ -42,6 +44,7 @@
   - [FTP传输](#use_ftp)
   - [声音不大，音质一般](#sound_effects)
   - [破音，上下声音不一致](#speaker_pa_calibration_test)
+
 
 
 
@@ -90,7 +93,7 @@
 >
 > ### A14只有HyperOS的移植
 >
-> ### 移植自动亮度有问题，会出现打开手电筒屏幕亮度拉满的情况
+> ### 大部分的移植自动亮度有问题，会出现打开手电筒屏幕亮度拉满的情况
 
 #### Cmi：
 
@@ -463,6 +466,32 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 
 
+## <a id="system_overlay_update">系统覆盖升降级须知</a>
+
+若想覆盖系统包，需要检查安卓补丁，如果补丁日期相同或更新可以直接覆盖升级
+
+<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/android-patch-date.jpg" alt="android-patch-date" />
+
+若补丁日期比当前系统旧，覆盖后删除以下文件即可解决大部分问题
+/data/dalvik-cache/ 
+/data/system/package_cache/ 
+/data/system/locksettings.db 
+
+
+
+## <a id="nfc_2.0">NFC2.0 相关问题</a>
+
+关于掉NFC2.0和部分设备的NFC可能在设置刷卡城市后失效，
+进第三方rec文件管理中或者使用Mt管理器
+/data/nfc删除
+/data/vendor/nfc删除
+/data/misc/nfc删除
+/data/system/package_cache/删除里面的垃圾缓存文件夹
+
+重启系统就好了
+
+
+
 ## <a id="error1">刷入系统或内核显示错误1</a>
 
 请重新下载文件，错误1一般是文件不完整
@@ -659,7 +688,7 @@ mt管理器进
 
 <p align="right">Author: 123nhh🍥</p>
 <p align="right">shiyun177🍥</p>
-<p align="right">Date: 2024/9/13</p>
+<p align="right">Latest Date: 2024/9/30</p>
 
 
 
