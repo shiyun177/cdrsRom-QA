@@ -483,9 +483,13 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 关于掉NFC2.0和部分设备的NFC可能在设置刷卡城市后失效，
 进第三方rec文件管理中或者使用Mt管理器
+
 /data/nfc删除
+
 /data/vendor/nfc删除
+
 /data/misc/nfc删除
+
 /data/system/package_cache/删除里面的垃圾缓存文件夹
 
 重启系统就好了
