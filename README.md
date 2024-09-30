@@ -473,8 +473,11 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/android-patch-date.jpg" alt="android-patch-date" />
 
 若补丁日期比当前系统旧，覆盖后删除以下文件即可解决大部分问题
+
 /data/dalvik-cache/ 
+
 /data/system/package_cache/ 
+
 /data/system/locksettings.db 
 
 
