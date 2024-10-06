@@ -30,7 +30,7 @@
 - [常见问题](#FAQ)
   - [系统覆盖升降级须知](#system_overlay_update)
   - [NFC 2.0 相关问题](#nfc_2.0)
-  - [显示错误1](#error1)
+  - [卡刷显示错误1](#error1)
   - [提示下载面具](#magisk_download)
   - [掉rec](#mi_rec)
   - [锁屏密码错乱、无法输入，等待目标应用响应等](#waiting_response)
