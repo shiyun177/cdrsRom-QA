@@ -163,7 +163,7 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 
 2. 解压出来下载的Recovery.img，查看是否支持boot临时启动，以skkk的TWRP为例
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/TWRP_name_label.png" alt="TWRP_name_label" />
+   <img src="/image/TWRP_name_label.png" alt="TWRP_name_label" />
 
    **带有REC标签为只能刷入Recovery分区使用，带有BOOT标签则支持临时启动，同时存在则表示两种方法均可**
 
@@ -171,13 +171,13 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 
    若显示"< waiting for any device >"或什么都没显示请检查手机是否进入fastboot 模式，尝试安装驱动（群内下载），更换或使用数据线另一面，更换USB 2.0接口
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/fastboot-devices.png" alt="fastboot-devices" />
+   <img src="/image/fastboot-devices.png" alt="fastboot-devices" />
 
    若显示多个设备请断开其他多余的连接，只保留需要刷入的那一个设备
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/fastboot-devices_only.png" alt="fastboot-devices_only" />只有一个设备
+   <img src="/image/fastboot-devices_only.png" alt="fastboot-devices_only" />只有一个设备
 
-4. 若使用临时启动方式，请输入"fastboot boot 路径名\\rec.img"（可将img文件直接拖拽到窗口中）<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/fastboot-boot_path.png" alt="fastboot-boot_path" />
+4. 若使用临时启动方式，请输入"fastboot boot 路径名\\rec.img"（可将img文件直接拖拽到窗口中）<img src="/image/fastboot-boot_path.png" alt="fastboot-boot_path" />
 
    回车出现"Finished"字样即为成功，手机会自动打开TWRP，点击"**高级-刷入当前TWRP**"即为刷入完成
 
@@ -200,7 +200,7 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 
 **点此跳转对应刷入方式：**[线刷](#usb_flash)		[卡刷](#twrp_flash)		[半卡刷](#2in1_flash)
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/system-package_name.jpg" alt="system-package_name" />
+<img src="/image/system-package_name.jpg" alt="system-package_name" />
 
 **文件名为：Ext4_cmi_Mi10Pro_Cdrs_HyperOS1.0.15.0.UMACNXM(13U移植)_A14_da608.zip**
 
@@ -248,7 +248,7 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 **只要出现“安装耗时xx秒**”，上方显示**成功**即为刷入成功
 安装完成一般如下图所示
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/TWRP_flash.png" alt="TWRP_flash" width="50%" />
+<img src="/image/TWRP_flash.png" alt="TWRP_flash" width="50%" />
 
 
 ## <a id="2in1_flash">半卡刷(ADB Sideload)</a>
@@ -257,7 +257,7 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 
 1. 手机进入rec界面，点击高级，ADB Sideload，滑动滑块
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/ADB-Sideload.png" alt="ADB-Sideload" width="50%" />
+   <img src="/image/ADB-Sideload.png" alt="ADB-Sideload" width="50%" />
 
 2. 连接电脑，在黑窗口输入"adb sideload 文件完整路径"(**不要解压，直接用zip压缩包**)
 
@@ -307,19 +307,19 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 
 2. 打开Apatch，修补boot.img
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/apatch_patch.jpg" alt="apatch_patch" width="50%" />
+   <img src="/image/apatch_patch.jpg" alt="apatch_patch" width="50%" />
 
 3. 设置超级密钥后点击开始修补
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/apatch_set-superkey.jpg" alt="apatch_set-superkey" width="50%" />
+   <img src="/image/apatch_set-superkey.jpg" alt="apatch_set-superkey" width="50%" />
 
 4. 刷入修补过的boot.img，存储路径在最下方
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/apatch_output-file.jpg" alt="apatch_output-file" width="50%" />
+   <img src="/image/apatch_output-file.jpg" alt="apatch_output-file" width="50%" />
 
 5. 重启手机，打开Apatch，输入超级密钥，安装系统补丁，完成
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/apatch_done.jpg" alt="apatch_done" />
+<img src="/image/apatch_done.jpg" alt="apatch_done" />
 
 
 
@@ -329,19 +329,19 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 
 ### <a id="magiskhide">仅使用MagiskHide</a>
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/magisk_magiskhide.jpg" alt="magisk-magiskhide" width="50%" />
+<img src="/image/magisk_magiskhide.jpg" alt="magisk-magiskhide" width="50%" />
 
 在配置MagiskHide中"，给应用打勾是隐藏该应用的root权限
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/magiskhide_list.jpg" alt="magiskhide_list" />
+<img src="/image/magiskhide_list.jpg" alt="magiskhide_list" />
 
 有些软件会出现这种，上方蓝色条只有一部分的情况，这时就需要点击一次勾以外的地方展开它，然后去点复选框才能有一个完全的隐藏
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/magiskhide_more-list.jpg" alt="magiskhide_more-list" width="50%" />
+<img src="/image/magiskhide_more-list.jpg" alt="magiskhide_more-list" width="50%" />
 
 ## <a id="sulist">使用SuList</a>
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/magisk_sulist.jpg" alt="magisk_sulist" width="50%" />
+<img src="/image/magisk_sulist.jpg" alt="magisk_sulist" width="50%" />
 
 和上方MagiskHide差不多，唯一的区别就是“配置SuList”中打勾的是可使用root权限的
 
@@ -357,7 +357,7 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 
 安装zygisk next，shamiko，tricky store，lsposed npm模块，lsp安装隐藏应用列表
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/magisk_hide-root-pro.jpg" alt="magisk_hide-root-pro" width="50%" />
+<img src="/image/magisk_hide-root-pro.jpg" alt="magisk_hide-root-pro" width="50%" />
 
 
 
@@ -379,17 +379,17 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 # <a id="core_patch">关于软件升降级 （核心破解）</a>
 
-请在LSPosed中安装核心破解，并勾选“系统框架”
+请在LSPosed或GitHub中安装核心破解，并勾选“系统框架”（[GitHub链接点此跳转](https://github.com/LSPosed/CorePatch)）
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/lsposed_core-patch.jpg" alt="lsposed_core-patch" width="50%" />
+<img src="/image/lsposed_core-patch.jpg" alt="lsposed_core-patch" width="50%" />
 
 然后用mt管理器直接安装
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/mt_install.jpg" alt="mt_install" width="50%" />
+<img src="/image/mt_install.jpg" alt="mt_install" width="50%" />
 
 若仍安装失败，请点击模块设置，把里面全勾重启
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/core-patch_setting.jpg" alt="core-patch_setting" width="50%" />
+<img src="/image/core-patch_setting.jpg" alt="core-patch_setting" width="50%" />
 
 **注：降级系统软件重启会恢复原来的系统版本，如一定需要降级请自行修改版本号确保高于原软件版本号**
 
@@ -399,11 +399,11 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 以手机管家举例，我们需要修改版本名和版本号，如图所示
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/edit_version.jpg" alt="edit_version" width="50%" />
+<img src="/image/edit_version.jpg" alt="edit_version" width="50%" />
 
 点击查看，点击 AndroidManifest.xml，再点击反编译
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/edit-version_edit-xml.jpg" alt="edit-version_edit-xml" width="50%" />
+<img src="/image/edit-version_edit-xml.jpg" alt="edit-version_edit-xml" width="50%" />
 
 修改 android:versionCode 和 android:versionName 后面的值，让其大于原来数值即可
 
@@ -419,33 +419,33 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 2. 打开文件夹，编辑flash_all.bat
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/edit_flash-all-bat.png" alt="edit_flash-all-bat" />
+   <img src="/image/edit_flash-all-bat.png" alt="edit_flash-all-bat" />
 
    框选的每一行前面都可以加上" **::** "注释掉，或者直接删除
 
 3. 打开 XiaoMiFlash.exe ，点击左上角Configuration，再点击MiFlash Configuration，将CheckPoint清空
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/checkpoint_clear.png" alt="checkpoint_clear" />
+   <img src="/image/checkpoint_clear.png" alt="checkpoint_clear" />
 
    接着点击Driver 安装驱动
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/install_driver.png" alt="install_driver" />
+   <img src="/image/install_driver.png" alt="install_driver" />
 
 4. 点击选择，选择系统包那个文件夹点击确定
 
 5. 右下角选择**全部删除！！！全部删除！！！全部删除！！！（上锁了自行解决！！！）**
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/check_flash-all.png" alt="check_flash-all" />
+   <img src="/image/check_flash-all.png" alt="check_flash-all" />
 
 6. **数据线插入 USB 2.0接口，手机进入fastboot模式，点击加载设备，显示设备后确认所有信息无误，是对应机型刷机包，也选的全部删除不是lock！全部确认完毕点击刷机并等待**
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/system_flash.png" alt="system_flash" />
+   <img src="/image/system_flash.png" alt="system_flash" />
 
    
 
 ## 其他问题
 
-若出现了 "Missmatching image and device error"或下方图片第一行样式长时间不动，请检查系统包与设备机型是否一致，确认无误的话编辑 flash_all.bat ，将下方框选的命令使用 " :: "注释掉或直接删除<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/delete_check-device.png" alt="delete_check-device" />
+若出现了 "Missmatching image and device error"或下方图片第一行样式长时间不动，请检查系统包与设备机型是否一致，确认无误的话编辑 flash_all.bat ，将下方框选的命令使用 " :: "注释掉或直接删除<img src="/image/delete_check-device.png" alt="delete_check-device" />
 
 ### 更多问题可在miuiver 找到答案
 
@@ -476,7 +476,7 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 若想覆盖系统包，需要检查安卓补丁，如果补丁日期相同或更新可以直接覆盖升级
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/android-patch-date.jpg" alt="android-patch-date" />
+<img src="/image/android-patch-date.jpg" alt="android-patch-date" />
 
 若补丁日期比当前系统旧，覆盖后删除以下文件即可解决大部分问题
 
@@ -517,9 +517,9 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 自行下载面具apk安装一下即可，可在群文件下载，或者去官方仓库下载
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/magisk_download.jpg" alt="magisk_download" width="75%" />
+<img src="/image/magisk_download.jpg" alt="magisk_download" width="75%" />
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/magisk_null.jpg" alt="magisk_null" />
+<img src="/image/magisk_null.jpg" alt="magisk_null" />
 
 
 
@@ -573,7 +573,7 @@ mt管理器进
 
 把核心破解中下图开关关掉就解决
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/momo_core-patch-close.jpg" alt="momo_core-patch-close" width="50%" />
+<img src="/image/momo_core-patch-close.jpg" alt="momo_core-patch-close" width="50%" />
 
 
 
@@ -581,7 +581,7 @@ mt管理器进
 
 **在刷机或进行重要且有风险的操作之前，我们建议先校验文件确保其完整性**
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/TWRP-package_name.jpg" alt="TWRP-package_name" />
+<img src="/image/TWRP-package_name.jpg" alt="TWRP-package_name" />
 
 以文件名为 <u>[REC_BOOT]3.7.1_12-Mi10Pro_FBEv2_v8.6_A14-cmi-skkk_9d23a457.zip</u> 的文件为例
 
@@ -595,7 +595,7 @@ mt管理器进
 
 打开cmd，输入"**certutil -hashfile <文件名称(绝对路径)> MD5**"，回车即可校验
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/windows_check-md5.png" alt="windows_check-md5" />
+<img src="/image/windows_check-md5.png" alt="windows_check-md5" />
 
 红色框选处为命令，绿色即为得到的结果，将结果与文件对比，**数值完全一致即为完整，数值不一样则需要重新下载**
 
@@ -605,13 +605,13 @@ mt管理器进
 
 以MT管理器为例，**长按文件，依次点击属性-校验，比对md5是否与文件一致，不一致请重新下载后再次比对**
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/android_check-md5.jpg" alt="android_check-md5" width=50% />
+<img src="/image/android_check-md5.jpg" alt="android_check-md5" width=50% />
 
 ### <a id="linux_Check">Linux</a>
 
 输入md5sum 文件名，回车即可
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/Linux_check-md5.png" alt="Linux_check-md5" width="50%" />
+<img src="/image/Linux_check-md5.png" alt="Linux_check-md5" width="50%" />
 
 
 
@@ -633,19 +633,19 @@ mt管理器进
 
 2. 将下载好的压缩包解压出来，存放位置和命名随意，但请注意**不能删除或修改这个路径里的任意文件夹或文件**例如我存放在了"C:\D\develop\ADB\\"
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/Platform-Tools_folder.png" alt="Platform-Tools_folder" />这个目录**此后这个路径和文件夹不能进行任何更改，否则按照接下来的步骤重新配置**
+   <img src="/image/Platform-Tools_folder.png" alt="Platform-Tools_folder" />这个目录**此后这个路径和文件夹不能进行任何更改，否则按照接下来的步骤重新配置**
 
 3. 打开这个文件夹并在顶部把路径**复制**下来
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/adb-path_copy.png" alt="adb-path_copy" />
+   <img src="/image/adb-path_copy.png" alt="adb-path_copy" />
 
 4. 按下Win键，在搜索栏输入"环境变量"打开或者依次打开"设置-系统信息-高级系统设置"，再点击环境变量，在**系统变量**中找到Path并双击打开
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/environment-variable_path.png" alt="environment-variable_path" />
+   <img src="/image/environment-variable_path.png" alt="environment-variable_path" />
 
 5. 点击"新建按钮"或点击下方空白栏，**将复制的路径粘贴进去，并一路点击确定**
 
-6. 最后使用**Win+R键输入"cmd"回车**，在黑窗口输入**"adb version"**，若出现版本号即为成功配置<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/cmd_adb-version.png" alt="cmd_adb-version" />
+6. 最后使用**Win+R键输入"cmd"回车**，在黑窗口输入**"adb version"**，若出现版本号即为成功配置<img src="/image/cmd_adb-version.png" alt="cmd_adb-version" />
 
 
 
@@ -653,33 +653,39 @@ mt管理器进
 
 1. 手机在文件管理点击右上角，选择远程管理
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/file-manager.jpg" alt="file-manager" width="50%" />
+<img src="/image/file-manager.jpg" alt="file-manager" width="50%" />
 
 2. 再点击右上角来到远程管理的设置界面
 
-<img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/file-maneger_setting.jpg" alt="file-maneger_setting" width="50%" />
+<img src="/image/file-maneger_setting.jpg" alt="file-maneger_setting" width="50%" />
 
 ​	匿名登录关闭则需要输入用户名和密码，反之打开则不需要
 
 3. 返回上一级
 
-4. 点击启动服务，Windows在此电脑上方地址栏输入蓝字即可
+4. 点击启动服务
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/file-manager-start.jpg" alt="file-manager-start" width="50%" />
+   <img src="/image/file-manager-start.jpg" alt="file-manager-start" width="50%" />
 
    手机以mt管理器举例
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/mt_add-ftp.jpg" alt="mt_add-ftp" />
+   <img src="/image/mt_add-ftp.jpg" alt="mt_add-ftp" />
 
 5. 点击三个点，选择添加网络存储，FTP
 
-   <img src="https://gitee.com/shiyun177/cdrsRom-QA/raw/main/image/mt_ftp-setting.jpg" alt="mt_ftp-setting" width="50%" />
+   <img src="/image/mt_ftp-setting.jpg" alt="mt_ftp-setting" width="50%" />
 
    主机填写上方"ftp://后面的IP地址"，端口填写上方" : "后面的数字
 
    设置了用户名和密码就输入进去，编码确认和上方传输编码一致，否则显示乱码
 
 6. 点击测试，显示测试成功保存即可，这时就能看见网络一栏多了个地址，点击即可连接
+
+
+
+Windows在此电脑上方地址栏输入蓝字即可
+
+<img src="/image/windows_ftp.png" alt="windows_ftp" />
 
 ## <a id="sound_effects">声音不大，音质一般</a>
 
