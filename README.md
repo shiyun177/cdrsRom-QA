@@ -30,7 +30,7 @@
 - [常见问题](#FAQ)
   - [系统覆盖升降级须知](#system_overlay_update)
   - [NFC 2.0 相关问题](#nfc_2.0)
-  - [卡刷显示错误1](#error1)
+  - [卡刷显示错误](#twrp_file_error)
   - [提示下载面具](#magisk_download)
   - [掉rec](#mi_rec)
   - [锁屏密码错乱、无法输入，等待目标应用响应等](#waiting_response)
@@ -505,9 +505,9 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 
 
-## <a id="error1">刷入系统或内核显示错误1</a>
+## <a id="twrp_file_error">刷入系统或内核显示错误</a>
 
-请重新下载文件，错误1一般是文件不完整
+请校验文件并重新下载，出现错误字样一般是文件不完整导致的，很少一部分情况是TWRP版本问题
 
 
 
