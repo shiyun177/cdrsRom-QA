@@ -749,7 +749,7 @@ Windows在此电脑上方地址栏输入蓝字即可
 
 <p align="right">Author: 123nhh🍥</p>
 <p align="right"><del>shiyun177🍥</del></p>
-<p align="right">Latest Date: 2024/10/21</p>
+<p align="right">Date: 2024/10/21</p>
 
 
 
