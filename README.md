@@ -20,7 +20,8 @@
   - [隐藏root-面具](#hide_root)
     - [MagiskHide](#magiskhide)
     - [Sulist](#sulist)
-  - [其他隐藏root的方法](#hide_root_other)
+  - [深度隐藏root的方法](#hide_root_depth)
+  - [Magisk和LSP模块的隐藏方法](#other_hide)
   - [关于模块想说的话](#about_modules)
 - [备份数据](#backup_data)
 - [软件升降级-核心破解](#core_patch)
@@ -44,6 +45,7 @@
   - [FTP传输](#use_ftp)
   - [声音不大，音质一般](#sound_effects)
   - [破音，上下声音不一致](#speaker_pa_calibration_test)
+  - [Toast弹窗过大](#big_toast)
 
 
 
@@ -125,17 +127,13 @@
 
 目前没有太多新包值得移植，最后打磨完毕后再有任何bug请自行解决或回退版本
 
-带NFC2.0的包可能会导致NFC异常，不建议选择
-
-
+带NFC2.0的包可能会导致NFC异常
 
 ## <a id="sys_Format">EXT4与EROFS的区别与内核</a>
 
-**在这里不做推荐，自己体验，谁再问哪个好骂谁**
-
 EXT4使用官方内核，EROFS使用TV的VK内核
 
-EXT4是第四代扩展文件系统，兼容性更好更通用，**分区可读写**；EROFS是可扩展只读文件系统，通过特定的技术拥有更好的空间利用率和读取性能，**分区只读不可写，修改系统需使用模块挂载**
+EXT4**分区可读写**；EROFS理论上系统更流畅一点**分区只读不可写，修改系统需使用模块挂载**
 
 EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除官方外其他支持的内核随意切换，**因为官方内核不支持EROFS**
 
@@ -153,7 +151,7 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 
 ### 请先将手机关机，按住电源键和音量下键进入fastboot模式，连接电脑
 
-### 方法一：在群文件或其他地方下载一键刷入TWRP并解压运行
+### 方法一：在群文件或其他地方下载一键刷入TWRP并解压按着提示运行
 
 ### 方法二：下载好第三方Recovery用搞机助手等工具刷入
 
@@ -224,7 +222,7 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 
    **若窗口左上角显示"选择",请按一次回车以继续**
 
-   **若无法输入数字，请检查手机是否进入fastboot模式并接入电脑，是否按照第一部操作，尝试更换数据线和USB2.0接口**
+   **若无法输入数字，请检查手机是否进入fastboot模式并接入电脑，是否安装驱动，尝试更换数据线和USB2.0接口**
 
 ## <a id="twrp_flash">卡刷</a>
 
@@ -274,7 +272,7 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 > ### 刷入前请进行备份
 >
 
-### 出厂A13开始就要修补init_boot.img，A12及以下的修补boot.img，此处以boot为例
+### 系统基于A13及以上的请修补init_boot.img，A12及以下的修补boot.img，此处以boot为例
 
 ### <a id="magisk">Magisk（面具）</a>
 
@@ -353,11 +351,43 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 
 
 
-### <a id="hide_root_other">其他隐藏root的方法（无教程，自行寻找各种模块，只提供思路）</a>
+### <a id="hide_root_depth">深度隐藏root的方法（无教程，自行寻找各种模块，只提供思路）</a>
 
-安装zygisk next，shamiko，tricky store，lsposed npm模块，lsp安装隐藏应用列表
+使用其他root管理器，安装zygisk next，shamiko，隐藏bl锁，lsposed 其他版本模块，lsp使用隐藏应用列表
 
 <img src="/image/magisk_hide-root-pro.jpg" alt="magisk_hide-root-pro" width="50%" />
+
+
+
+## <a id="other_hide">Magisk和LSP模块的隐藏方法</a>
+
+### 关于发现Magisk
+
+使用面具自带的 "隐藏 Magisk 应用"即可解决
+
+<img src="/image/hide_magisk.jpg" alt="hide_magisk" width="50%" />
+
+ ### 关于Applist Detector (Ruru) 发现Xposed模块（即LSP模块）的解决办法
+
+<img src="/image/ruru.jpg" alt="ruru" width="50%" />
+
+#### lsp安装 "隐藏应用列表" 模块，启用并勾选系统框架重启手机
+
+1. 点击模板管理，创建黑名版模板，随便起一个名，点击框中的编辑列表
+
+   <img src="/image/HWA_blacklist.jpg" alt="HWA_blacklist" width="50%" />
+
+2. 将需要隐藏的应用勾选
+
+   <img src="/image/HWA_edit_blacklist.jpg" alt="HWA_edit_blacklist" width="50%" />
+
+3. 回到首页，点击应用管理，想对哪个应用隐藏就点哪个应用，以ruru为例
+
+   <img src="/image/HWA_enable_hide.jpg" alt="HWA_enable_hide" width="50%" />
+
+   选择启用隐藏，模板设置里勾选刚刚保存的模板，退出，大功告成
+
+<img src="/image/ruru_hide_xposed.jpg" alt="ruru_hide_xposed" width="50%" />
 
 
 
@@ -390,6 +420,8 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 若仍安装失败，请点击模块设置，把里面全勾重启
 
 <img src="/image/core-patch_setting.jpg" alt="core-patch_setting" width="50%" />
+
+<img src="/image/core-patch_view.jpg" alt="core-patch_view" width="50%" />
 
 **注：降级系统软件重启会恢复原来的系统版本，如一定需要降级请自行修改版本号确保高于原软件版本号**
 
@@ -701,13 +733,23 @@ Windows在此电脑上方地址栏输入蓝字即可
 
 
 
+## <a id="big_toast">Toast弹窗过大</a>
+
+<img src="/image/big_toast.jpg" alt="big_toast" width="50%" />
+
+解决方法：四清输入系统
+
+
+
+
+
 <br />
 
 <br />
 
 <p align="right">Author: 123nhh🍥</p>
 <p align="right"><del>shiyun177🍥</del></p>
-<p align="right">Latest Date: 2024/10/14</p>
+<p align="right">Latest Date: 2024/10/21</p>
 
 
 
