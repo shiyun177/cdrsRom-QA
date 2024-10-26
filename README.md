@@ -301,7 +301,7 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 
 ### <a id="ksu">KernelSU（KSU）</a>
 
-**若使用KSU则原来所有Magisk模块都会被清楚，请自行考虑**
+**若使用KSU则原来所有Magisk模块都会被清除，请自行考虑**
 
 1. 准备支持KSU的内核，并下载安装KSU管理器（[点此跳转](https://github.com/tiann/KernelSU/releases)）
 2. 刷入内核即可使用（若设备里有Magisk可以点击卸载Magisk-完全卸载即可）
