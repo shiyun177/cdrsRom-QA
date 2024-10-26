@@ -276,15 +276,19 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 
 ### 方法一：下载好第三方Recovery用搞机助手等工具刷入
 
-### 方法二：传统fastboot命令线刷，若没配置adb请[点击这里](#adb_install)查看教程
+### 方法二：手机在Root环境下使用软件刷入
+
+### 方法三：传统fastboot命令线刷，若没配置adb请[点击这里](#adb_install)查看教程
+
+> #### 线刷指令：fastboot flash boot|boot_a/b|boot_ab boot.img（[刷入方式详见刷入第三方rec](#flash_rec)）
+
+
 
 ### <a id="magisk">Magisk（面具）</a>
 
 包自带Delta面具(即Kitsune Mask)，想要升降级就修补环境刷入即可
 
 注：最好不要去降级，管理器版本比内核修补版本低并且不完全卸载环境直接降会无法获取甚至卡重启
-
-线刷指令：fastboot flash boot|boot_a/b|boot_ab boot.img（[刷入方式详见刷入第三方rec](#flash_rec)）
 
 
 
