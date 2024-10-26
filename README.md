@@ -274,6 +274,10 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 
 ### 系统基于A13及以上的请修补init_boot.img，A12及以下的修补boot.img，此处以boot为例
 
+### 方法一：下载好第三方Recovery用搞机助手等工具刷入
+
+### 方法二：传统fastboot命令线刷，若没配置adb请[点击这里](#adb_install)查看教程
+
 ### <a id="magisk">Magisk（面具）</a>
 
 包自带Delta面具(即Kitsune Mask)，想要升降级就修补环境刷入即可
