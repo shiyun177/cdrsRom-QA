@@ -297,7 +297,7 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 
 想刷其他面具版本可以参考：https://magiskcn.com/magisk-change
 
-也可以下载并安装需要的面具，在原面具中把自动响应改为允许并给新面积root权限，最后到新面具修补即可
+也可以下载并安装需要的面具，在原面具中把自动响应改为允许并给新面具root权限，最后到新面具修补即可
 
 相关链接：[Magisk原版仓库](https://github.com/topjohnwu/Magisk)		[Kitsune Mask (Delta仓库)](https://github.com/HuskyDG/magisk-files)		[Magisk Alpha仓库](https://install.appcenter.ms/users/vvb2060/apps/magisk/distribution_groups/public)
 
