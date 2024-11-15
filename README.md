@@ -1,5 +1,7 @@
 # 目录
 
+## 警告！！！HyperOS 2 有些并不适用，请注意标识
+
 - [前言](#start)
   - [机型代号](#device_Code)
 - [解锁](#unlock_Bootloader)
@@ -34,7 +36,7 @@
   - [卡刷显示错误](#twrp_file_error)
   - [提示下载面具](#magisk_download)
   - [掉rec](#mi_rec)
-  - [锁屏密码错乱、无法输入，等待目标应用响应等](#waiting_response)
+  - [锁屏密码错乱、无法输入，等待目标应用响应等 **<u>(*部分方法HyperOS 2不适用)</u>**](#waiting_response)
   - [安全管家打不开](#securitycenter_cannot_open)
   - [没有主题壁纸和手机管家图标](#not_found_themestore_and_securitymanager)
   - [momo包管理服务异常](#momo_package_service_exception)
@@ -46,6 +48,7 @@
   - [声音不大，音质一般](#sound_effects)
   - [破音，上下声音不一致](#speaker_pa_calibration_test)
   - [Toast弹窗过大](#big_toast)
+- [HyperOS 2 相关问题](#hos2)
 
 
 
@@ -273,7 +276,7 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 >
 > ### 系统包里自带Root的可直接刷入系统包或者拿出来刷入
 
-### 系统基于A13及以上的请修补init_boot.img，A12及以下的修补boot.img，此处以boot为例
+### 系统基于A13及以上的请修补init_boot.img，A12及以下的修补boot.img，此处以boot为例 <u>（注意是基于！也就是首批出厂机型对应的安卓版本，与手机当前的安卓版本无关！！！）</u>
 
 ### 方法一：下载好第三方Recovery用搞机助手等工具刷入
 
@@ -572,7 +575,7 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
 
 
 
-## <a id="waiting_response">锁屏密码错乱、无法输入，等待目标应用响应等</a>
+## <a id="waiting_response">锁屏密码错乱、无法输入，等待目标应用响应等（HyperOS 2不可用）</a>
 
 进rec或者mt管理器:/data/system/locksettings.db删除这个文件，然后重启。 
 手机这种情况多半是安全补丁变旧的锅
@@ -587,13 +590,13 @@ rec（twrp）需点击高级-文件管理方可操作
 
 
 
-## 刷机后进桌面：卡重启、打开应用无响应等一切问题
+## 刷机后进桌面：卡重启、打开应用无响应等一切问题<u>（部分方法HyperOS 2不适用）</u>
 
 rec主页-高级-文件管理删除以下文件即可 
 /data/dalvik-cache/ 
 /data/system/package_cache/ 
-/data/system/locksettings.db 
-/data/system/locksettings.db-journal 
+/data/system/locksettings.db **<u>（HyperOS 2不可用，会卡重启）</u>**
+/data/system/locksettings.db-journal **<u>（HyperOS 2不可用）</u>**
 
 
 
@@ -752,6 +755,36 @@ Windows在此电脑上方地址栏输入蓝字即可
 
 
 
+# <a id="hos2">关于HyperOS 2</a>
+
+## HyperOS 2 个人认为在折腾中比HyperOS 1 更容易出现问题
+
+
+
+## HyperOS 2 不可以删除 <u>/data/system/locksettings.db</u> 这个文件！会卡重启！只能格式化data解决！！！
+
+
+
+### 广电/联通跳信号可尝试换卡槽，有概率解决，原因未知，出现在移植包上
+
+
+
+### 已知865/870的 澎湃2 移植包无法录入指纹使用，但可以通过 澎湃1 录入好指纹再刷上 澎湃2，此时指纹是可以用于解锁屏幕的
+
+
+
+### 第二屏下方三个点出现闪屏情况请排查模块问题
+
+
+
+### 开机后点击应用提示等待目标应用响应请排查各类可能修改到系统的文件，例如西米露，本人出现这种情况几乎都是西米露导致的
+
+#### 在这里提供解决思路（以西米露为例）：
+
+#### 若想保留西米露数据可删掉LSPosed框架，然后将同版本西米露覆盖一遍，升级安装两次，再安装回LSPosed即可解决
+
+#### 若不想保留西米露数据可直接删除西米露重启手机
+
 
 
 <br />
@@ -759,8 +792,8 @@ Windows在此电脑上方地址栏输入蓝字即可
 <br />
 
 <p align="right">Author: 123nhh🍥</p>
-<p align="right"><del>shiyun177🍥</del></p>
-<p align="right">Date: 2024/10/21</p>
+<p align="right">shiyun177🍥</p>
+<p align="right">Date: 2024/11/16</p>
 
 
 
