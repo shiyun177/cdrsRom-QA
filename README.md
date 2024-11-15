@@ -765,6 +765,12 @@ Windows在此电脑上方地址栏输入蓝字即可
 
 
 
+### HyperOS2 的安卓版本为15，请使用对应版本的模块，例如LSPosed框架，若不在LSP内测群中可使用修改版，在这里首先推荐 JingMatrix 的（[点此跳转仓库地址](https://github.com/JingMatrix/LSPosed)），其次推荐 mywalkb（[点此跳转仓库地址](https://github.com/mywalkb/LSPosed_mod)）
+
+### A15的LSPosed安装完可能无法出现在顶部通知栏，可在拨号盘输入" * #* #5776733#* #* "打开(LSPosed英文字母对应的数字)，或解压安装模块里的manager.apk安装
+
+
+
 ### 广电/联通跳信号可尝试换卡槽，有概率解决，原因未知，出现在移植包上
 
 
