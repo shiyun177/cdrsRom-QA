@@ -31,6 +31,7 @@
 - [官方线刷教程-救砖](#miflash)
 - [如何替换基带](#baseband)
 - [常见问题](#FAQ)
+  - [关于VK内核](#voyager_kernel)
   - [系统覆盖升降级须知](#system_overlay_update)
   - [NFC 2.0 相关问题](#nfc_2.0)
   - [卡刷显示错误](#twrp_file_error)
@@ -48,6 +49,7 @@
   - [声音不大，音质一般](#sound_effects)
   - [破音，上下声音不一致](#speaker_pa_calibration_test)
   - [Toast弹窗过大](#big_toast)
+
 - [HyperOS 2 相关问题](#hos2)
 
 
@@ -140,9 +142,9 @@ EXT4**分区可读写**；EROFS理论上系统更流畅一点**分区只读不�
 
 EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除官方外其他支持的内核随意切换，**因为官方内核不支持EROFS**
 
-小米10系列官方系统内核为4.19版本，只支持墓碑v1机制，系统墓碑挂载会提示不完整。，而TV大佬的第三方内核可以开启完整的墓碑v2机制，所以使用TV内核。 
+小米10系列官方系统内核为4.19版本，只支持墓碑v1机制，系统墓碑挂载会提示不完整。，而TV大佬的VK内核可以开启完整的墓碑v2机制，所以使用TV内核。 
 
-想上车内核可以咨询群内管理@The Voyager（酷安同名），有更多新功能使用，并且持续优化调度。
+关于内核的详细信息和上车方式请[点此查看](#voyager_kernel)
 
 
 
@@ -333,6 +335,8 @@ EXT4官方内核可以和其他支持的内核随意切换，EROFS可以和除�
 
 <img src="/image/apatch_done.jpg" alt="apatch_done" />
 
+Tips: Apatch可以与其它Root方案共存，教程请自行寻找，这里不提供
+
 
 
 ## <a id="hide_root">如何隐藏Root-面具</a>
@@ -515,6 +519,26 @@ root了没有空间可以使用"Swift Backup"这款软件，支持FTP，直接�
   **推荐多系统工具箱备份整个字库！** 
 
 # <a id="FAQ">常见问题</a>
+
+
+
+## <a id="voyager_kernel">关于VK内核</a>
+
+VK内核，全程Voyager Kernel
+
+是由TV大佬（The Voyager）制作的第三方内核
+
+有着诸多功能，例如FEAS，类似HyperCore 的东西
+
+想上车内核可以私聊群内管理@The Voyager，若群内未找到，可前往酷安咨询
+
+
+
+内核食用方法：内核和其他内核一样的刷入方式，刷入完成后刷附加模块即可，可选择性搭配Scene调度
+
+**注：附加模块相关事宜请注意TV群内的信息（包括但不限于群公告，群文件，群在线文档）**
+
+**865/870/888 不需要刷入附加模块**
 
 
 
@@ -809,9 +833,8 @@ Windows在此电脑上方地址栏输入蓝字即可
 
 <br />
 
-<p align="right">Author: 123nhh🍥</p>
-<p align="right">shiyun177🍥</p>
-<p align="right">Date: 2024/11/20</p>
+<p align="right">Author: shiyun177</p>
+<p align="right">Date: 2024/11/28</p>
 
 
 
